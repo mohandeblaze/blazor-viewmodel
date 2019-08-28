@@ -1,0 +1,28 @@
+﻿@page "/"
+@namespace ListviewCheckboxEx.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ListviewCheckboxEx</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <script src="https://cdn.syncfusion.com/ej2/17.2.46/dist/ej2.min.js"></script>
+
+    <script src="https://cdn.syncfusion.com/ej2/17.2.46/dist/ejs.interop.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/17.2.46/material.css">
+</head>
+<body>
+    <app>
+        @* Remove the following line of code to disable prerendering *@
+        @(await Html.RenderStaticComponentAsync<App>())
+    </app>
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>
