@@ -7,7 +7,7 @@ namespace ListviewCheckboxEx.Data
 {
     public class ListviewItemModel
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string DocumentTypeName { get; set; }
         public bool IsChecked { get; set; }
     }

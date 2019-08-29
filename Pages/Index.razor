@@ -1,25 +1,17 @@
 ﻿@page "/"
-
-@using ViewModels
 @using Data
-@inject IFetchDataViewModel fetchDataViewModel
-@inject IListDataViewModel listDataViewModel
+@using Components
 
-<EjsListView ShowCheckBox="true"
-             DataSource="@(listDataViewModel.ListviewItems)"
-             ShowHeader="true"
-             HeaderTitle="Listview header"
-             Height="300">
-    <ListViewFieldSettings Id="Id" Text="DocumentTypeName" IsChecked="IsChecked"></ListViewFieldSettings>
-    <ListViewEvents TValue="ListviewItemModel" Selected="@((e) => SelectedItem = e.Text)"></ListViewEvents>
-</EjsListView>
+@inherits IndexBase
+
+
+<ListviewCheckboxEx.Components.Listview ViewModel="@ViewModel" SelectedItem="@(e => SelectedItem = e)">
+</ListviewCheckboxEx.Components.Listview>
+
 <br />
-<h4>Current Selected item: <span id="selected-item">@SelectedItem</span></h4>
+
+<h4>Current Selected item: <span>@(SelectedItem?.DocumentTypeName)</span></h4>
 
 @code {
-    string SelectedItem = "";
-    protected override async Task OnInitializedAsync()
-    {
-        await listDataViewModel.GetListItemsAsync();
-    }
+    ListviewItemModel SelectedItem;
 }

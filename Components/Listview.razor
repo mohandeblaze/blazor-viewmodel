@@ -1,0 +1,24 @@
+﻿@using ListviewCheckboxEx.ViewModels
+@using Data
+
+<EjsListView DataSource="@ViewModel.ListviewItems"
+             ShowCheckBox="true"
+             ShowHeader="true"
+             HeaderTitle="Listview header"
+             Height="300">
+    <ListViewFieldSettings Id="Id"
+                           Text="DocumentTypeName"
+                           IsChecked="IsChecked">
+    </ListViewFieldSettings>
+    <ListViewEvents TValue="ListviewItemModel"
+                    Selected="@(e => SelectedItem.InvokeAsync(e.Data))">
+    </ListViewEvents>
+</EjsListView>
+
+@functions {
+    [Parameter]
+    public IListDataViewModel ViewModel { get; set; }
+
+    [Parameter]
+    public EventCallback<ListviewItemModel> SelectedItem { get; set; }
+}

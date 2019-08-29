@@ -35,8 +35,6 @@ namespace ListviewCheckboxEx
             {
                 o.MaximumReceiveMessageSize = 102400000;
             });
-            services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
-            services.AddTransient<IFetchDataModel, FetchDataModel>();
             services.AddTransient<IListDataModel, ListDataModel>();
             services.AddTransient<IListDataViewModel, ListDataViewModel>();
         }
